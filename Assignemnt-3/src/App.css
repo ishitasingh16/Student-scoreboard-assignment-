@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #020b0f;
+  color: #b8fdf7;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 255, 200, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 200, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+
+.app {
+  padding: 40px 20px;
+}
+
+.main-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.header span {
+  color: #00ffe1;
+  text-shadow: 0 0 10px #00ffe1;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid rgba(0, 255, 200, 0.3);
+}
+
+.stat-card {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.stat-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(0, 255, 200, 0.3);
+}
+
+.stat-icon-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ffe1;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 600;
+  color: #00ffe1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #6fe7dc;
+}
+
+.stat-value--pass {
+  color: #00ff9f;
+}
+
+.stat-value--fail {
+  color: #ff4d6d;
+}
+
+
+.card {
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  background: rgba(0, 20, 25, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+
+.card-header {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.3);
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th {
+  text-align: left;
+  font-size: 11px;
+  padding: 12px;
+  color: #6fe7dc;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.2);
+}
+
+.student-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.1);
+}
+
+.student-row {
+  position: relative;
+}
+
+.student-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #00ffe1;
+}
+
+.student-row:hover {
+  background: rgba(0, 255, 200, 0.05);
+}
+
+
+.status-pass {
+  color: #00ff9f;
+  border: 1px solid rgba(0, 255, 159, 0.3);
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+.status-fail {
+  color: #ff4d6d;
+  border: 1px solid rgba(255, 77, 109, 0.3);
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+
+.score-input {
+  width: 60px;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  color: #b8fdf7;
+  padding: 5px;
+}
+
+.btn-update {
+  margin-left: 10px;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  color: #6fe7dc;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  color: #00ffe1;
+  border-color: #00ffe1;
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.4);
+}
+
+
+.add-form {
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  padding: 20px;
+}
+
+.add-form h2 {
+  margin-bottom: 5px;
+}
+
+.add-form p {
+  margin-bottom: 20px;
+  color: #6fe7dc;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+  align-items: end;
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 12px;
+  color: #6fe7dc;
+}
+
+
+.form-input {
+  padding: 12px;
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  background: transparent;
+  color: #b8fdf7;
+}
+
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.submit-text {
+  color: #6fe7dc;
+  font-size: 14px;
+}
+
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px solid rgba(0, 255, 200, 0.4);
+  background: rgba(0, 255, 200, 0.05);
+  color: #00ffe1;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+  border-color: #00ffe1;
+}
+
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
